@@ -107,11 +107,23 @@ def encode_image_base64(image_path):
 st.title("Pixtral Image Analysis")
 uploaded_file = st.file_uploader("Upload an image of a digital electricity meter", type=["jpeg", "jpg"])
 
+# if uploaded_file is not None:
+#     # Load the image
+#     img = Image.open(uploaded_file).convert("RGB")
+
+#     # Display the image
+#     st.image(img, caption="Uploaded Image", use_column_width=True)
+
+
 
 
 if uploaded_file is not None:
     # Read the uploaded image and encode it
     base_64_image = base64.b64encode(uploaded_file.read()).decode("utf-8")
+
+    img = Image.open(uploaded_file).convert("RGB")
+    st.image(img, caption="Uploaded Image", use_column_width=True)
+    
 
     prompt = """
     You’re an advanced image analysis assistant with a strong background in interpreting images of digital devices like electric meters. You excel at reading labels from various instruments and extracting relevant data in a clear and structured format. Your expertise allows you to accurately identify and extract values from complex images, ensuring precision and clarity.

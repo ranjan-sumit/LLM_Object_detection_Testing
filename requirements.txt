@@ -4,3 +4,9 @@ gdown
 ultralytics
 mistralai
 python-dotenv
+opencv-python
+torch
+torchvision
+Pillow
+mistralai
+beautifulsoup4

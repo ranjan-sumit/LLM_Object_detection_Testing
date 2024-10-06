@@ -89,6 +89,7 @@ import base64
 import streamlit as st
 from mistralai import Mistral
 from dotenv import load_dotenv
+from PIL import Image
 
 # Load environment variables
 load_dotenv()

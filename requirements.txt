@@ -1,0 +1,6 @@
+streamlit
+Pillow
+gdown
+ultralytics
+mistralai
+python-dotenv

@@ -90,7 +90,8 @@ import streamlit as st
 from mistralai import Mistral
 from dotenv import load_dotenv
 from PIL import Image
-
+st.sidebar.title('Model Testing App')
+st.sidebar.write('This model is created for testing the different object detection model for meter image testing')
 # Load environment variables
 load_dotenv()
 api_key = "SzjdK8qBgUAHpCkmsjb5ku9S9WJjadxX"
@@ -107,14 +108,6 @@ def encode_image_base64(image_path):
 # Streamlit app
 st.title("Pixtral Image Analysis")
 uploaded_file = st.file_uploader("Upload an image of a digital electricity meter", type=["jpeg", "jpg"])
-
-# if uploaded_file is not None:
-#     # Load the image
-#     img = Image.open(uploaded_file).convert("RGB")
-
-#     # Display the image
-#     st.image(img, caption="Uploaded Image", use_column_width=True)
-
 
 
 

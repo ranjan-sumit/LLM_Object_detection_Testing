@@ -146,6 +146,12 @@ if uploaded_file is not None:
     # Debugging: Print the raw response
     st.write("Raw Pixtral Response:")
     st.write(chat_response.choices[0].message.content)
+
+
+    if uploaded_file is not None:
+        # Load the image
+        img = Image.open(uploaded_file).convert("RGB")
+        st.image(img, caption="Uploaded Image", use_column_width=True)
     
     # # Attempt to parse the JSON
     # try:

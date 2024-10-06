@@ -149,8 +149,8 @@ if uploaded_file is not None:
     st.write("Raw Pixtral Response:")
     st.write(chat_response.choices[0].message.content)
 
-    img = Image.open(uploaded_file).convert("RGB")
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+    #img = Image.open(uploaded_file).convert("RGB")
+    st.image(base_64_image, caption="Uploaded Image", use_column_width=True)
 
 
     # if uploaded_file is not None:

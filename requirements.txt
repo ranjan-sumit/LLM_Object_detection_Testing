@@ -4,4 +4,3 @@ gdown
 ultralytics
 mistralai
 python-dotenv
-cv2

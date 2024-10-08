@@ -72,14 +72,14 @@ if uploaded_file is not None:
     
     # Function to call YOLO OCR model
     def get_yolo_ocr_prediction(image):
-        url = "https://7hezksr22pptk3-8000.proxy.runpod.net/predict"
+        url = "https://3j16k9aqq3s044-8000.proxy.runpod.net/predict"
         files = {'file': image}
         response = r.post(url, files=files)
         return response.json()
     
     # Function to call GOT OCR model
     def get_got_ocr_prediction(image):
-        url = "https://7hezksr22pptk3-8004.proxy.runpod.net/predict"
+        url = "https://3j16k9aqq3s044-8004.proxy.runpod.net/predict"
         files = {'image_file': image}
         response = r.post(url, files=files)
         return response.json()

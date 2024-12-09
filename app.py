@@ -34,23 +34,31 @@ if uploaded_file is not None:
     # Read the uploaded image and encode it
     base_64_image = base64.b64encode(uploaded_file.read()).decode("utf-8")
 
-    prompt = """
-    You’re an advanced image analysis assistant with a strong background in interpreting images of digital devices like electric meters. You excel at reading labels from various instruments and extracting relevant data in a clear and structured format. Your expertise allows you to accurately identify and extract values from complex images, ensuring precision and clarity.
+    prompt prompt = """ You’re an advanced image analysis assistant with a strong background in interpreting images of digital devices like electric meters. Your task is to accurately extract the following information from the electric meter in the image and return it as JSON:
 
-    Your task is to analyze an image of a digital electricity meter and extract the required details. 
-    Here are the details I’d like you to keep in mind:
-    - The image will contain a digital electricity meter with various information
-    - You need to capture the below details and give the output in a single JSON format. 
-        Serial Number: Identify the unique serial number printed or engraved on the meter. It is alphanumeric starting with alphabets followed by numbers
-        Meter Reading: Capture the current meter reading which is present in the digital display. Do not look for it in any other part of the image. Also pick the unit if it is available
-        Phase Information: Determine the phase (e.g., single-phase or three-phase) based on any labels, symbols, or text on the meter.
-        Meter Type: Recognize the type of meter (e.g., Smart  or Normal) based on visual cues.
-        Billing Type: Recognize the Billing type (e.g., PrePaid  or PostPaid) based on visual cues or presence of keywords.
-        Net Meter Type Validation: Recognize the type (e.g., Bidirectional  or NA) based on visual cues or presence of keywords.
+Serial Number
+Meter Reading
+Phase Information: "1 Phase" or "3 Phase"
+Meter Type : "Smart" or "Normal"
+Billing Type : "Prepaid" if  a keypad or is present in the meter or "PostPaid"
+Net Meter Type Validation
+If any of the above information cannot be found, set its value to "not found".
 
-    - Focus on accuracy and ensure all relevant readings are captured.
-    - Do not provide any additional explanation 
-    """
+Format the output as:
+
+json
+Copy code
+{
+    "Serial Number": "value",
+    "Meter Reading": "value",
+    "Phase Information": "value",
+    "Meter Type": "value",
+    "Billing Type": "value",
+    "Net Meter Type Validation": "value"
+}
+Focus exclusively on extracting and formatting the requested information. Do not provide any additional explanation or output."
+
+"""
 
    # Call the Pixtral model
     chat_response = client.chat.complete(

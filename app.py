@@ -98,10 +98,10 @@ if uploaded_file is not None:
         # Reset the file pointer to the start for the next upload
     uploaded_file.seek(0)
 
-    # YOLO OCR prediction
-    yolo_ocr_prediction = get_yolo_ocr_prediction(uploaded_file)
-    st.write("YOLO OCR Prediction:")
-    st.json(yolo_ocr_prediction)
+    # # YOLO OCR prediction
+    # yolo_ocr_prediction = get_yolo_ocr_prediction(uploaded_file)
+    # st.write("YOLO OCR Prediction:")
+    # st.json(yolo_ocr_prediction)
 
     # Reset the file pointer to the start for the next upload
     uploaded_file.seek(0)

@@ -34,7 +34,7 @@ if uploaded_file is not None:
     # Read the uploaded image and encode it
     base_64_image = base64.b64encode(uploaded_file.read()).decode("utf-8")
 
-    prompt prompt = """ You’re an advanced image analysis assistant with a strong background in interpreting images of digital devices like electric meters. Your task is to accurately extract the following information from the electric meter in the image and return it as JSON:
+    prompt = """ You’re an advanced image analysis assistant with a strong background in interpreting images of digital devices like electric meters. Your task is to accurately extract the following information from the electric meter in the image and return it as JSON:
 
                         Serial Number
                         Meter Reading
@@ -91,20 +91,20 @@ if uploaded_file is not None:
         return response.json()
 
     
-    # # Debugging: Print the raw response
-    # st.write("Raw Pixtral Response:")
-    # st.write(chat_response.choices[0].message.content)
+    # Debugging: Print the raw response
+    st.write("Raw Pixtral Response:")
+    st.write(chat_response.choices[0].message.content)
 
-    #     # Reset the file pointer to the start for the next upload
-    # uploaded_file.seek(0)
+        # Reset the file pointer to the start for the next upload
+    uploaded_file.seek(0)
 
-    # # YOLO OCR prediction
-    # yolo_ocr_prediction = get_yolo_ocr_prediction(uploaded_file)
-    # st.write("YOLO OCR Prediction:")
-    # st.json(yolo_ocr_prediction)
+    # YOLO OCR prediction
+    yolo_ocr_prediction = get_yolo_ocr_prediction(uploaded_file)
+    st.write("YOLO OCR Prediction:")
+    st.json(yolo_ocr_prediction)
 
-    # # Reset the file pointer to the start for the next upload
-    # uploaded_file.seek(0)
+    # Reset the file pointer to the start for the next upload
+    uploaded_file.seek(0)
 
     # GOT OCR prediction
     got_ocr_prediction = get_got_ocr_prediction(uploaded_file)

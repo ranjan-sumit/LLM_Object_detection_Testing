@@ -36,29 +36,27 @@ if uploaded_file is not None:
 
     prompt prompt = """ You’re an advanced image analysis assistant with a strong background in interpreting images of digital devices like electric meters. Your task is to accurately extract the following information from the electric meter in the image and return it as JSON:
 
-Serial Number
-Meter Reading
-Phase Information: "1 Phase" or "3 Phase"
-Meter Type : "Smart" or "Normal"
-Billing Type : "Prepaid" if  a keypad or is present in the meter or "PostPaid"
-Net Meter Type Validation
-If any of the above information cannot be found, set its value to "not found".
-
-Format the output as:
-
-json
-Copy code
-{
-    "Serial Number": "value",
-    "Meter Reading": "value",
-    "Phase Information": "value",
-    "Meter Type": "value",
-    "Billing Type": "value",
-    "Net Meter Type Validation": "value"
-}
-Focus exclusively on extracting and formatting the requested information. Do not provide any additional explanation or output."
-
-"""
+                        Serial Number
+                        Meter Reading
+                        Phase Information: "1 Phase" or "3 Phase"
+                        Meter Type : "Smart" or "Normal"
+                        Billing Type : "Prepaid" if  a keypad or is present in the meter or "PostPaid"
+                        Net Meter Type Validation
+                        If any of the above information cannot be found, set its value to "not found".
+                        
+                        Format the output as:
+                        
+                        json
+                        Copy code
+                        {
+                            "Serial Number": "value",
+                            "Meter Reading": "value",
+                            "Phase Information": "value",
+                            "Meter Type": "value",
+                            "Billing Type": "value",
+                            "Net Meter Type Validation": "value"
+                        }
+                        Focus exclusively on extracting and formatting the requested information. Do not provide any additional explanation or output."""
 
    # Call the Pixtral model
     chat_response = client.chat.complete(

@@ -87,7 +87,7 @@ Focus exclusively on extracting and formatting the requested information. Do not
     
     # Function to call GOT OCR model
     def get_got_ocr_prediction(image):
-        url = "https://3j16k9aqq3s044-8004.proxy.runpod.net/predict"
+        url = "https://u58enh69pciatl-8004.proxy.runpod.net/predict"
         files = {'image_file': image}
         response = r.post(url, files=files)
         return response.json()

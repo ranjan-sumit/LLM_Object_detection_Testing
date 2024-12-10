@@ -93,20 +93,20 @@ Focus exclusively on extracting and formatting the requested information. Do not
         return response.json()
 
     
-    # Debugging: Print the raw response
-    st.write("Raw Pixtral Response:")
-    st.write(chat_response.choices[0].message.content)
+    # # Debugging: Print the raw response
+    # st.write("Raw Pixtral Response:")
+    # st.write(chat_response.choices[0].message.content)
 
-        # Reset the file pointer to the start for the next upload
-    uploaded_file.seek(0)
+    #     # Reset the file pointer to the start for the next upload
+    # uploaded_file.seek(0)
 
-    # YOLO OCR prediction
-    yolo_ocr_prediction = get_yolo_ocr_prediction(uploaded_file)
-    st.write("YOLO OCR Prediction:")
-    st.json(yolo_ocr_prediction)
+    # # YOLO OCR prediction
+    # yolo_ocr_prediction = get_yolo_ocr_prediction(uploaded_file)
+    # st.write("YOLO OCR Prediction:")
+    # st.json(yolo_ocr_prediction)
 
-    # Reset the file pointer to the start for the next upload
-    uploaded_file.seek(0)
+    # # Reset the file pointer to the start for the next upload
+    # uploaded_file.seek(0)
 
     # GOT OCR prediction
     got_ocr_prediction = get_got_ocr_prediction(uploaded_file)
